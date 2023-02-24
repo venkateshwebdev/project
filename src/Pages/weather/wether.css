@@ -1,0 +1,52 @@
+.wether-container{
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.day{
+    background-image: url('day-large.png');
+}
+.night{
+    background-image: url('night-large.svg');
+}
+.temp{
+    font-size: 56px;
+    font-weight: 600;
+    text-shadow:1px 1px 3px #323232;
+    color: red;
+}
+.add{
+    font-size: 18px;
+
+}
+.day .temp-content{
+    color:black
+}
+.temp-content{
+    display: flex;
+    /* flex-direction: column;
+    text-align: left; */
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    color:white
+}
+.wether-content{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+/* .wether-main{
+    color:red
+} */
+
+@media screen and (max-width:600px) {
+    .day{
+        background-image: url('day.png');
+    }
+    .night{
+        background-image: url('night.svg');
+    }
+}

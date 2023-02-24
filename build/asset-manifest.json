@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/TheProject/static/css/main.6f8913f4.css",
+    "main.js": "/TheProject/static/js/main.0e023b50.js",
+    "static/media/night.svg": "/TheProject/static/media/night.9ed69fb9351a35e4467f.svg",
+    "static/media/day.png": "/TheProject/static/media/day.ac84c35781228613a0df.png",
+    "static/media/day-large.png": "/TheProject/static/media/day-large.05519409da99fe3162e3.png",
+    "static/media/night-large.svg": "/TheProject/static/media/night-large.fcab5fea79c27c43f1a2.svg",
+    "index.html": "/TheProject/index.html",
+    "main.6f8913f4.css.map": "/TheProject/static/css/main.6f8913f4.css.map",
+    "main.0e023b50.js.map": "/TheProject/static/js/main.0e023b50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f8913f4.css",
+    "static/js/main.0e023b50.js"
+  ]
+}
