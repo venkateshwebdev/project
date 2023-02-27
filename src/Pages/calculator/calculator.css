@@ -39,3 +39,16 @@ button{
     border-radius: 7px;
     box-shadow: 3px 3px black;
 }
+.dark{
+    background-color: #252525;
+}
+
+.dark .calculator-display{
+    background-color: black;
+    box-shadow: 6px 6px #dddddd;
+}
+.dark button{
+    background-color: black;
+    color: white;
+    box-shadow: 3px 3px grey;
+}

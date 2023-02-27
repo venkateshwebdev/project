@@ -4,9 +4,10 @@ import CalculatorContext from "../../contexts/calclater";
 import './calculator.css'
 const Calculator = () => {
     const [font,setFont] = useState()
+    const [calTheme,setCalTheme] = useState(true);
     return ( 
-    <CalculatorContext.Provider value={{font,setFont}}>
-    <div className="calculator-container">
+    <CalculatorContext.Provider value={{font,setFont,calTheme,setCalTheme}}>
+    <div className={`calculator-container ${calTheme?`light`:`dark`}`}>
     <Navbar navFirstName="CALC " navSecondName={`" later "`} enableSearch={false} enableMode={true} />
     <div className="calculator-box">
         <div className="calculator-display"></div>

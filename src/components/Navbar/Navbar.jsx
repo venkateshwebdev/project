@@ -4,6 +4,7 @@ import {RiMenu3Line,RiCloseLine} from 'react-icons/ri'
 import { useContext, useEffect, useState, useRef } from 'react'
 import WeatherContext from '../../contexts/wetherContext'
 import ToDOContext from '../../contexts/ToDocontext'
+import CalculatorContext from '../../contexts/calclater'
 
 const Search = (props)=>{
     return(
@@ -22,13 +23,15 @@ const Navbar = (props) => {
     const [mode,setMode] = useState(props.enableMode)
     const cxt = useContext(WeatherContext)
     const todocxt = useContext(ToDOContext)
-    const setToDO = ()=>{
+    const calcxt = useContext(CalculatorContext)
+    const changeTheme = ()=>{
         todocxt.setToDoMode((prev)=>(!prev))
+        calcxt.setCalTheme((prev)=>(!prev))
     }
     return (
         <div className={`navbar-container`}>
             <div className='navbar-heading'><span className='s1'>{props.navFirstName}</span><span className='s2'>{props.navSecondName}</span></div>
-            {mode&&<div onClick={setToDO}>{todocxt.toDoMode?"🌙":"🌚"}</div>}
+            {mode&&<div onClick={changeTheme}>{todocxt.toDoMode?"🌙":"☀️"}</div>}
             <div className='search-container'>
                 {searchType&&<Search value={props.value} submit={props.submit} work={props.work} clear={()=>cxt.setToggle(true)} />}
             

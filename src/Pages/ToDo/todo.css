@@ -41,6 +41,7 @@ input{
     color:grey;
     border-radius:0;
     cursor: pointer;
+    padding: 5px;
 }
 
 .td-light .todo-wrap-button{
