@@ -1,0 +1,7 @@
+.home{
+    display: flex;
+    flex-direction: column;
+}
+.home Link{
+    text-decoration: none;
+}

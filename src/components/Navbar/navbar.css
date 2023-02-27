@@ -27,6 +27,15 @@ input{
 .n , .n input{
     color:whitesmoke
 }
+.searchButton{
+    background: none;
+    outline: none;
+    border: none;
+    height: 25px;
+    width: 25px;
+    box-shadow: none;
+    cursor: pointer;
+}
 /* .navbar-heading::after{
     content: " ";
     height: 3px;

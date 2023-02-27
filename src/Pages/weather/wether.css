@@ -13,14 +13,16 @@
     font-size: 56px;
     font-weight: 600;
     text-shadow:1px 1px 3px #323232;
-    color: red;
 }
 .add{
     font-size: 18px;
 
 }
 .day .temp-content{
-    color:black
+    color:white
+}
+.night .temp{
+    color: red;
 }
 .temp-content{
     display: flex;
@@ -28,8 +30,9 @@
     text-align: left; */
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 25px;
-    color:white
+    padding-top: 10%;
+    color:white;
+    user-select: none;
 }
 .wether-content{
     display: flex;
@@ -41,12 +44,23 @@
 /* .wether-main{
     color:red
 } */
-
+.coor{
+    font-size: 12px;
+}
 @media screen and (max-width:600px) {
     .day{
         background-image: url('day.png');
     }
     .night{
         background-image: url('night.svg');
+    }
+    .day .temp-content{
+        color:black
+    }
+    .temp-content{
+        padding-top: 25px;
+    }
+    .day .temp{
+        color: red;
     }
 }

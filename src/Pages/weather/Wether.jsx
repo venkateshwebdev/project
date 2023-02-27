@@ -10,6 +10,9 @@ const Wether = (props) =>{
     const APIkey = "c62789a2d6adc27245210c4793aa2a2e";
     const [lat,setLat] = useState(16.4877);
     const [lon,setLon] = useState(81.8641);
+    const [coordinates,setCoordinates] = useState("")
+    const [array,setArray] = useState([])
+    const [toggle,setToggle] = useState(true)
     useEffect(()=>{
         const d = new Date();
         let dhour = d.getHours();
@@ -23,8 +26,9 @@ const Wether = (props) =>{
             setFont(true)
         }
     },[])
-    useEffect(async()=>{
-        const weather_data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`);
+    useEffect(()=>{
+        
+        (async ()=>{const weather_data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`);
         const data = await weather_data.json()
         console.log(data)
            const d = {
@@ -36,19 +40,32 @@ const Wether = (props) =>{
             weather_icon:data.weather[0].icon
            }
            setFinalData(d)
-           console.log(d)
-    },[])
+           console.log(d)})();
+    },[lat,lon])
     const handleLoactionChange= (e)=>{
         console.log(e.target.value)
+        setCoordinates(e.target.value)
+
+    }
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        setLat(coordinates.split(",")[0])
+        setLon(coordinates.split(",")[1])
+        console.log(lat)
+        console.log(lon)
+        setCoordinates("");
+        setToggle(true)
+        alert("Enter the coordinates in the from of (LAT,LON) with no spaces")
     }
     return(
-        <WeatherContext.Provider value={{font,setFont}}>
+        <WeatherContext.Provider value={{toggle,setToggle}}>
         <div className={`wether-container ${hourCheck?"day":"night"}`}>
-        <Navbar work={handleLoactionChange}navFirstName="WE " navSecondName={`" ther "`} enableSearch={true}/>
+        <Navbar work={handleLoactionChange} navFirstName="WE " navSecondName={`" ther "`} enableSearch={true} value={coordinates} submit={handleSubmit} />
         <div className="temp-content">
         <div>
         <div className="temp">{finalData.temperature} °c</div>
         <div className="add">{finalData.city_name} , {finalData.country_name}</div>
+        <div className="coor">( {lat}°N , {lon}°E )</div>
         </div>
         <div className="wether-content">
         <div className="wether-icon"><img src={`http://openweathermap.org/img/wn/${finalData.weather_icon}.png`} alt="icon" /></div>
@@ -61,6 +78,7 @@ const Wether = (props) =>{
 
     )
 }
+// October 13, 2013 11:13:00
 // {finalData.temperature}
 // {finalData.weather_main}
 // {finalData.weather_description}
