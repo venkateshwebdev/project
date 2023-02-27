@@ -50,9 +50,13 @@
 @media screen and (max-width:600px) {
     .day{
         background-image: url('day.png');
+        background-repeat: none;
+        background-size: cover;
     }
     .night{
         background-image: url('night.svg');
+        background-repeat: none;
+        background-size: cover;
     }
     .day .temp-content{
         color:black
