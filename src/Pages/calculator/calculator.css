@@ -11,7 +11,7 @@
     display: none;
 }
 .calculator-box{
-    margin: 0 10%;
+    margin: 10% 10% 0 10%;
     width: 80%;
     /* background-color: red; */
     display: flex;
