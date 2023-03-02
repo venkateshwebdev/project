@@ -5,6 +5,9 @@ import { useContext, useEffect, useState, useRef } from 'react'
 import WeatherContext from '../../contexts/wetherContext'
 import ToDOContext from '../../contexts/ToDocontext'
 import CalculatorContext from '../../contexts/calclater'
+import dark from './dark.png'
+import light from './light.png'
+
 
 const Search = (props)=>{
     return(
@@ -31,7 +34,7 @@ const Navbar = (props) => {
     return (
         <div className={`navbar-container`}>
             <div className='navbar-heading'><span className='s1'>{props.navFirstName}</span><span className='s2'>{props.navSecondName}</span></div>
-            {mode&&<div onClick={changeTheme}>{todocxt.toDoMode?"🌙":"☀️"}</div>}
+            {mode&&<div onClick={changeTheme}>{todocxt.toDoMode?<img src={dark} alt="dark" />:<img src={light} alt="light" />}</div>}
             <div className='search-container'>
                 {searchType&&<Search value={props.value} submit={props.submit} work={props.work} clear={()=>cxt.setToggle(true)} />}
             

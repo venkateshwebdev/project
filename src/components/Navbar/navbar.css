@@ -59,6 +59,10 @@ input{
     display: none;
     cursor: pointer;
 }
+img{
+    height: 24px;
+    width: 24px;
+}
 @media screen and (max-width:600px) {
     .navbar-container{
         font-size: 1.2rem;

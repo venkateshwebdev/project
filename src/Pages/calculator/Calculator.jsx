@@ -24,7 +24,7 @@ const Calculator = () => {
     useEffect(()=>{
         try{
             const lst = equation.slice(-1);
-            if (!(lst==="+"||lst==="-"||lst==="*"||lst==="/"||lst==="%")){
+            if (!(lst==="+"||lst==="-"||lst==="*"||lst==="/"||lst==="%"||lst==="=")){
                 setAnswer(eval(equation))
             }
         }
