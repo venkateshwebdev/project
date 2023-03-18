@@ -7,7 +7,8 @@ const Calculator = () => {
     const [calTheme,setCalTheme] = useState(true);
     const [equation,setEquation] = useState("");
     const [answer,setAnswer] = useState()
-    const numbersList = ["AC","⌫","%","÷",7,8,9,"*",4,5,6,"-",1,2,3,"+",0,".","="]
+    const [aa,setAA] = useState(false);
+    const numbersList = ["AC","/","%","⌫",7,8,9,"*",4,5,6,"-",1,2,3,"+",0,".","="]
     const clickButton=(e)=>{
         if (e.target.innerHTML === "AC"){
             setEquation("")
@@ -15,6 +16,10 @@ const Calculator = () => {
         }
         else if(e.target.innerHTML === "⌫"){
             setEquation(equation.slice(0,-1))
+        }
+        else if (e.target.innerHTML ==="="){
+            setEquation(equation)
+            setAA(true)
         }
         else{
             setEquation((prev)=>prev+e.target.innerHTML)
@@ -43,7 +48,7 @@ const Calculator = () => {
         <div className="calculator-display">
             <div className="calc-content">
                 <div className="eq">{equation}</div>
-                <div className="answer">{answer}</div>
+                <div className={`answer ${aa&&"aad"}`}>{answer}</div>
             </div>
             <div className="display-style">
             <div className="style1"></div>

@@ -1,7 +1,95 @@
 .home{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto,1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 200px 30px;
+    width: 90%;
+    margin: 0% 10%;
+    height: 100vh;
+}
+
+.home-nav{
+    height: 100vh;
+    width: 10%;
+    position: fixed;
+    background-color: #252525;
+    color: white;
+    font-size: 102px;
+    font-weight: 900;
+    writing-mode:vertical-lr;
+    letter-spacing: 10px;
+    text-align: center;
+    left: 90%;
+    text-shadow: 2px 2px 1px salmon;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home-main{
+    display: flex;
+    overflow: hidden;
+    background-color: #ededed;
 }
 .home Link{
     text-decoration: none;
+}
+.home input{
+    color: black;
+}
+.home-proj{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    z-index:0;
+    overflow: hidden;}
+.home-proj::after{
+    content: " ";
+    height: 300px;
+    width: 300px;
+    background:rgba(255,255,255,0.3);
+    backdrop-filter: blur(2px);
+
+}
+.wetherimg{
+    background-image: url("../weather/wether.png");
+    background-size: cover;
+}
+.todoimg{
+    background-image: url("../ToDo/todod.png");
+    background-size: cover;
+}
+.calcimg{
+    background-image: url("../calculator/calcd.png");
+    background-size: cover;
+
+}
+@media screen and (max-width:1200px) {
+    .home{
+        grid-template-columns: repeat(1,1fr);
+        height: auto;
+        margin-top: 10%;
+    }
+    .home-nav{
+        width: 10%;
+        font-size: 54px;
+    }
+}
+@media screen and (max-width:640px) {
+    .home{
+        grid-template-columns: repeat(1,1fr);
+        width: 80%;
+    }
+    .home-proj{
+        height: 200px;
+        width: 200px;
+        
+    }
+    .home-nav{
+        width: 20%;
+        left: 80%;
+        
+    }
 }

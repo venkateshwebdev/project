@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Search from "../../components/Search";
 import ToDOContext from "../../contexts/ToDocontext";
@@ -7,6 +7,14 @@ const ToDo = () => {
     const todocxt = useContext(ToDOContext)
     const [todoList,setTodoList] = useState([]);
     const [todoItem,setTodoItem] = useState("");
+    useEffect(()=>{
+        const list = localStorage.getItem("todo")
+        const flist = list.split(",")
+        setTodoList(flist)
+    },[])
+    useEffect(()=>{
+        localStorage.setItem("todo",[todoList])
+    },[todoList])
     const handleForm = (e) =>{
         e.preventDefault()
         setTodoItem("")
@@ -15,12 +23,14 @@ const ToDo = () => {
     }
     const handleInput = (e)=>{
         setTodoItem(e.target.value)
-        
     }
     const removeElement = (e)=>{
         console.log(e)
         // alert("Your entry will be Deleted")
         setTodoList((current)=>current.filter((ele)=>ele!==e.target.innerHTML))
+    }
+    const handleSave = ()=>{
+        
     }
     return ( 
         <div className={`toDo ${todocxt.toDoMode?"td-light":"td-dark"}`}>
@@ -31,9 +41,10 @@ const ToDo = () => {
                 <form onSubmit={handleForm} className="todo-form">
                     <input onChange={handleInput} type="text" placeholder="Add a work..."  value={todoItem} />
                     <button className="todo-wrap-button">Add</button>
+                    <button onClick={handleSave} className="todo-wrap-button">Save</button>
                 </form>
                 </div>
-                <div className="todo-content-container">{todoList.map((e)=>(<div onClick={removeElement} className="todo-list-content"><span className="todo-list-content-before"></span><span className="element">{e}</span></div>))}
+                <div className="todo-content-container">{todoList?.map((e)=>(<div onClick={removeElement} className="todo-list-content"><span className="todo-list-content-before"></span><span className="element">{e}</span></div>))}
 </div>
             </div>
             

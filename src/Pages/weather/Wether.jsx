@@ -47,6 +47,7 @@ const Wether = (props) =>{
         setCoordinates(e.target.value)
 
     }
+    const future_data =[{date:"3-4-23",wether:"Rainy",icon:"🌦️"},{date:"3-4-23",wether:"SUnny",icon:"☀️"},{date:"5-3-23",wether:"Rainy",icon:"⛈️"}]
     const handleSubmit = (e)=>{
         e.preventDefault();
         setLat(coordinates.split(",")[0])
@@ -73,6 +74,9 @@ const Wether = (props) =>{
         <div className="wether-description">{finalData.weather_description}</div>
         </div>
         </div>
+        {/* <div className="transp">
+            {future_data.map((e)=><div className="future">{e.date} {e.icon} {e.wether}</div>)}
+        </div> */}
         </div>
         </WeatherContext.Provider>
 
