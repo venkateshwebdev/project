@@ -48,7 +48,11 @@ const ToDo = () => {
                     {/* <button onClick={handleSave} className="todo-wrap-button">Save</button> */}
                 </form>
                 </div>
-                <div className="todo-content-container">{todoList?.map((e)=>(<div onClick={removeElement} className="todo-list-content"><span className="todo-list-content-before"></span><span className="element">{e}</span></div>))}
+                <div className="todo-content-container">
+                    {todoList?.map((e)=>(<div onClick={removeElement} className="todo-list-content">
+                        <div className="todo-list-content-before"></div>
+                        <div className="element">{e}</div>
+                        </div>))}
 </div>
             </div>
             

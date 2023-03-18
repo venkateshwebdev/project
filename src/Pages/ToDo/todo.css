@@ -72,10 +72,11 @@ input{
     font-weight: 600;
     font-size: 18px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 20px;
 }
 .todo-list-content-before{
+    flex-shrink: 0;
     height: 12px;
     width: 12px;
     background-color: red;
