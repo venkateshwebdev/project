@@ -9,7 +9,7 @@ const ToDo = () => {
     const [todoItem,setTodoItem] = useState("");
     useEffect(()=>{
         const list = localStorage.getItem("todo")
-        const flist = list.split(",")
+        const flist = list?.split(",")
         setTodoList(flist)
     },[])
     useEffect(()=>{
